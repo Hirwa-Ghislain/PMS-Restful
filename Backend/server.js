@@ -37,6 +37,5 @@ app.use("/api/v1/dashboard", dashboardRoutes)
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
-
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, ()=>console.log(`Server running on port ${PORT}`))
