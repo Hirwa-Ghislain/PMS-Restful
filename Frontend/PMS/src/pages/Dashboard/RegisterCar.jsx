@@ -16,8 +16,6 @@ const RegisterCar = () => {
   const navigate = useNavigate()
   const isAdmin = user?.role === 'admin'
   
-  console.log('User role:', user?.role) // Debug log
-  console.log('Is admin:', isAdmin) // Debug log
 
   const [registrations, setRegistrations] = useState([])
   const [loading, setLoading] = useState(false)
@@ -126,7 +124,7 @@ const RegisterCar = () => {
 
   const handleGenerateBill = async (id) => {
     try {
-      await axiosInstance.patch(API_PATHS.REGISTER_CARS.GENERATE_BILL(id))
+      await axiosInstance.post(API_PATHS.REGISTER_CARS.GENERATE_BILL(id))
       toast.success('Bill generated successfully')
       fetchRegistrations()
     } catch (error) {
